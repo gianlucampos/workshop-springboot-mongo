@@ -1,6 +1,7 @@
 package br.com.gianlucampos.workshopmongo.services;
 
 import br.com.gianlucampos.workshopmongo.domain.User;
+import br.com.gianlucampos.workshopmongo.dto.UserDTO;
 import br.com.gianlucampos.workshopmongo.repository.UserRepository;
 import br.com.gianlucampos.workshopmongo.services.exception.ObjectNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -22,5 +23,13 @@ public class UserService {
     public User findById(String id) {
         Optional<User> obj = repo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
+    }
+
+    public User insert(User obj) {
+        return repo.insert(obj);
+    }
+
+    public User fromDTO(UserDTO objDto) {
+        return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
     }
 }
