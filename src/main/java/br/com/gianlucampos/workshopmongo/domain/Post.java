@@ -7,20 +7,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Data
 @AllArgsConstructor
-@Document(collection = "user")
-public class User implements Serializable {
+@Document(collection = "post")
+public class Post implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
     private String id;
-    private String name;
-    private String email;
+    private LocalDate date;
+    private String title;
+    private String body;
+    private User author;
 
     @Override
     public int hashCode() {
