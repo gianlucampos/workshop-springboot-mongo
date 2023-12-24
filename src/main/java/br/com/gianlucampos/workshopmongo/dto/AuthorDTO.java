@@ -1,15 +1,15 @@
 package br.com.gianlucampos.workshopmongo.dto;
 
 import br.com.gianlucampos.workshopmongo.domain.User;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 import java.io.Serial;
 import java.io.Serializable;
 
 @Data
-@AllArgsConstructor
+@NoArgsConstructor
 public class AuthorDTO implements Serializable {
 
     @Serial
