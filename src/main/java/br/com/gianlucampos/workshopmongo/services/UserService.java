@@ -29,6 +29,12 @@ public class UserService {
         return repo.insert(obj);
     }
 
+    public void update(User obj) {
+        User newObj = findById(obj.getId());
+        updateData(newObj, obj);
+        repo.save(newObj);
+    }
+
     public void delete(String id) {
         findById(id);
         repo.deleteById(id);
@@ -36,5 +42,10 @@ public class UserService {
 
     public User fromDTO(UserDTO objDto) {
         return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
+    }
+
+    private void updateData(User newObj, User obj) {
+        newObj.setName(obj.getName());
+        newObj.setEmail(obj.getEmail());
     }
 }
