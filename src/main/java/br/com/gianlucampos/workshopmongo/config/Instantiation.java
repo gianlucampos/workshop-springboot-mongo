@@ -21,7 +21,7 @@ public class Instantiation implements CommandLineRunner {
     private final PostRepository postRepository;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
         userRepository.deleteAll();
         postRepository.deleteAll();
