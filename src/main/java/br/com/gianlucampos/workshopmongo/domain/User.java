@@ -31,6 +31,7 @@ public class User implements Serializable {
     private List<Post> posts = new ArrayList<>();
 
     public User(String id, String name, @NonNull String email) {
+        super();
         this.id = id;
         this.name = name;
         this.email = email;
